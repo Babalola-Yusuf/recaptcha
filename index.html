@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <title>reCAPTCHA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le-uG8pAAAAAB_uooi8TzoETyZEjA3g4xgsVH6s"></script>
+
+    <script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Le-uG8pAAAAAB_uooi8TzoETyZEjA3g4xgsVH6s', {action: 'formbackend_frontpage'}).then(function(token) {
+        document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
+    </script>
+
+    <title>reCAPTCHA-test</title>
 </head>
 <body>
 <h1>CAPTCHA DEMO</h1>
-<form action="" method="post">
+<form action="https://www.formbackend.com/f/3e1fba156098f503" method="post">
 Name: <input type="text" name="name"><br>
 City: <input type="text" name="city"><br><br>
-<div class="g-recaptcha" data-sitekey="6LfneWMpAAAAALi7_RbgoVDO9DemYiCARB1VYPjg"></div>
-<button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'data-action='submit'>Submit</button>
+<input type="" id="g-recaptcha-response" name="g-recaptcha-response">
+<button ><i class="fa-solid fa-angles-right fa-fade"></i></button>
 </form>
 </body>
 <script src="./script.js"></script>
